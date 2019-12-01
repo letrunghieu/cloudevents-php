@@ -2,7 +2,7 @@
 
 namespace HieuLe\CloudEvents\Attributes\Abstracts;
 
-use HieuLe\CloudEvents\AttributeInterface;
+use HieuLe\CloudEvents\Attributes\AttributeInterface;
 
 abstract class AbstractStringAttribute implements AttributeInterface
 {

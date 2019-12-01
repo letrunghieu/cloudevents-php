@@ -4,6 +4,8 @@
 namespace HieuLe\CloudEvents;
 
 
+use HieuLe\CloudEvents\Attributes\AttributeInterface;
+
 class AttributeCollection
 {
     /** @var AttributeInterface[] */

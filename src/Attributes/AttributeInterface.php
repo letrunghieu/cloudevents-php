@@ -1,6 +1,6 @@
 <?php
 
-namespace HieuLe\CloudEvents;
+namespace HieuLe\CloudEvents\Attributes;
 
 
 interface AttributeInterface

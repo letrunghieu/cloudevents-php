@@ -3,7 +3,7 @@
 namespace HieuLe\CloudEvents\Attributes\Abstracts;
 
 use DateTimeInterface;
-use HieuLe\CloudEvents\AttributeInterface;
+use HieuLe\CloudEvents\Attributes\AttributeInterface;
 
 abstract class AbstractDateTimeAttribute implements AttributeInterface
 {

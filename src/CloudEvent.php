@@ -3,6 +3,7 @@
 namespace HieuLe\CloudEvents;
 
 use DateTimeInterface;
+use HieuLe\CloudEvents\Attributes\AttributeInterface;
 use HieuLe\CloudEvents\Attributes\Data;
 use HieuLe\CloudEvents\Attributes\DataContentType;
 use HieuLe\CloudEvents\Attributes\DataSchema;

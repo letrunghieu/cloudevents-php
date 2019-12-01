@@ -2,7 +2,7 @@
 
 namespace HieuLe\CloudEvents\Attributes\Abstracts;
 
-use HieuLe\CloudEvents\AttributeInterface;
+use HieuLe\CloudEvents\Attributes\AttributeInterface;
 use Psr\Http\Message\UriInterface;
 
 abstract class AbstractUriAttribute implements AttributeInterface
