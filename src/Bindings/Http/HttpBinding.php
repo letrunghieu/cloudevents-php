@@ -1,6 +1,6 @@
 <?php
 
-namespace HieuLe\CloudEvents\Bindings;
+namespace HieuLe\CloudEvents\Bindings\Http;
 
 use HieuLe\CloudEvents\CloudEvent;
 use HieuLe\CloudEvents\ContentMode;
