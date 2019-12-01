@@ -2,6 +2,7 @@
 
 namespace HieuLe\CloudEvents;
 
+use DateTimeInterface;
 use HieuLe\CloudEvents\Attributes\Data;
 use HieuLe\CloudEvents\Attributes\DataContentType;
 use HieuLe\CloudEvents\Attributes\DataSchema;
@@ -11,7 +12,7 @@ use HieuLe\CloudEvents\Attributes\SpecVersion;
 use HieuLe\CloudEvents\Attributes\Subject;
 use HieuLe\CloudEvents\Attributes\Time;
 use HieuLe\CloudEvents\Attributes\Type;
-use HieuLe\CloudEvents\Types\Uri;
+use Psr\Http\Message\UriInterface;
 
 class CloudEvent
 {
@@ -19,11 +20,10 @@ class CloudEvent
 
     public function __construct(
         string $id,
-        Uri $source,
+        UriInterface $source,
         string $specVersion,
         string $type
-    )
-    {
+    ) {
         $this->attributeCollection = new AttributeCollection();
 
         $this->setId($id)
@@ -37,7 +37,7 @@ class CloudEvent
         return $this->getAttribute(Id::ATTR_NAME)->getValue();
     }
 
-    public function getSource(): Uri
+    public function getSource(): UriInterface
     {
         return $this->getAttribute(Source::ATTR_NAME)->getValue();
     }
@@ -63,7 +63,7 @@ class CloudEvent
         return $attribute->getValue();
     }
 
-    public function getDataSchema(): ?Uri
+    public function getDataSchema(): ?UriInterface
     {
         $attribute = $this->getAttribute(DataSchema::ATTR_NAME);
 
@@ -86,7 +86,7 @@ class CloudEvent
 
     }
 
-    public function getTime(): ?\DateTimeInterface
+    public function getTime(): ?DateTimeInterface
     {
         $attribute = $this->getAttribute(Time::ATTR_NAME);
 
@@ -116,7 +116,7 @@ class CloudEvent
         return $this;
     }
 
-    public function setSource(Uri $source): self
+    public function setSource(UriInterface $source): self
     {
         $this->attributeCollection
             ->addAttribute(new Source($source));
@@ -155,7 +155,7 @@ class CloudEvent
         return $this;
     }
 
-    public function setDataSchema(?Uri $dataSchema): self
+    public function setDataSchema(?UriInterface $dataSchema): self
     {
         if ($dataSchema === null) {
             $this->attributeCollection
@@ -185,7 +185,7 @@ class CloudEvent
         return $this;
     }
 
-    public function setTime(?\DateTimeInterface $time): self
+    public function setTime(?DateTimeInterface $time): self
     {
         if ($time === null) {
             $this->attributeCollection

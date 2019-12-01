@@ -3,18 +3,18 @@
 namespace HieuLe\CloudEvents\Attributes\Abstracts;
 
 use HieuLe\CloudEvents\AttributeInterface;
-use HieuLe\CloudEvents\Types\Uri;
+use Psr\Http\Message\UriInterface;
 
 abstract class AbstractUriAttribute implements AttributeInterface
 {
-    private Uri $value;
+    private UriInterface $value;
 
-    public function __construct(Uri $value)
+    public function __construct(UriInterface $value)
     {
         $this->value = $value;
     }
 
-    public function getValue(): Uri
+    public function getValue(): UriInterface
     {
         return $this->value;
     }
